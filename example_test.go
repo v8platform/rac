@@ -1,11 +1,4 @@
-# rac
-Исполнитель `rac` от 1С Предприятие
-
-
-### Пример использования
-```go 
-
-package main
+package rac_test
 
 import (
 	"github.com/k0kubun/pp"
@@ -13,7 +6,7 @@ import (
 	"log"
 )
 
-func main() {
+func ExampleManager_InfobasesList() {
 
 	manager, err := rac.NewManager("localhost")
 
@@ -38,5 +31,3 @@ func main() {
 	pp.Println(infobases)
 
 }
-
-```
