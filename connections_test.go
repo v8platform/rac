@@ -37,7 +37,7 @@ func (s *connectionsTestSuite) SetupSuite() {
 
 func (s *connectionsTestSuite) TestConnectionsList() {
 
-	_, _ = NewManager("srv-uk-app22:1545")
+	_, _ = NewManager("localhost:1545")
 
 	//resp, err := m.ConnectionsList(nil)
 	//s.r().NoError(err)

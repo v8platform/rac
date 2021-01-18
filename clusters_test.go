@@ -38,7 +38,7 @@ func (s *clusterTestSuite) SetupSuite() {
 
 func (s *clusterTestSuite) TestClusterList() {
 
-	m, _ := NewManager("srv-uk-app22:1545")
+	m, _ := NewManager("localhost:1545")
 	needLen := len(m.idxCluster)
 	resp, err := m.Clusters(ClustersList{})
 	s.r().NoError(err)
