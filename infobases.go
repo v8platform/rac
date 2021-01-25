@@ -93,7 +93,7 @@ func (i InfobasesList) Parse(res *RawRespond) error {
 
 	err := Unmarshal(res.Raw, &list)
 	res.Error = err
-	res.parsedRespond = list
+	res.ParsedRespond = list
 
 	return err
 
@@ -121,7 +121,7 @@ func (i InfobasesSummaryInfo) Parse(res *RawRespond) error {
 
 	err := Unmarshal(res.Raw, &info)
 	res.Error = err
-	res.parsedRespond = info
+	res.ParsedRespond = info
 	return err
 }
 
@@ -154,7 +154,7 @@ func (i InfobaseFullInfo) Parse(res *RawRespond) error {
 
 	err := Unmarshal(res.Raw, &info)
 	res.Error = err
-	res.parsedRespond = info
+	res.ParsedRespond = info
 	return err
 }
 
@@ -199,7 +199,7 @@ func (i InfobaseDrop) Parse(res *RawRespond) error {
 
 	err := Unmarshal(res.Raw, &info)
 	res.Error = err
-	res.parsedRespond = info
+	res.ParsedRespond = info
 	return err
 }
 
@@ -362,7 +362,7 @@ func (i InfobaseUpdate) Parse(res *RawRespond) error {
 
 	err := Unmarshal(res.Raw, &info)
 	res.Error = err
-	res.parsedRespond = info
+	res.ParsedRespond = info
 	return err
 }
 
@@ -399,7 +399,7 @@ func (i InfobaseUpdateDescription) Parse(res *RawRespond) error {
 
 	err := Unmarshal(res.Raw, &info)
 	res.Error = err
-	res.parsedRespond = info
+	res.ParsedRespond = info
 	return err
 }
 
@@ -494,7 +494,7 @@ func (i InfobaseCreate) Parse(res *RawRespond) error {
 
 	err := Unmarshal(res.Raw, &info)
 	res.Error = err
-	res.parsedRespond = info
+	res.ParsedRespond = info
 	return err
 }
 
@@ -523,7 +523,7 @@ func (m *Manager) Infobases(what interface{}, opts ...interface{}) (respond Info
 		return respond, err
 	}
 
-	switch v := respond.parsedRespond.(type) {
+	switch v := respond.ParsedRespond.(type) {
 
 	case InfobaseInfo:
 		respond.Info = v

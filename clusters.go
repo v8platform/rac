@@ -68,7 +68,7 @@ func (i ClustersList) Parse(res *RawRespond) error {
 
 	err := Unmarshal(res.Raw, &list)
 	res.Error = err
-	res.parsedRespond = list
+	res.ParsedRespond = list
 	return err
 
 }
@@ -95,7 +95,7 @@ func (i ClustersInfo) Parse(res *RawRespond) error {
 
 	err := Unmarshal(res.Raw, &info)
 	res.Error = err
-	res.parsedRespond = info
+	res.ParsedRespond = info
 	return err
 }
 
@@ -207,7 +207,7 @@ func (m *Manager) Clusters(what interface{}, opts ...interface{}) (respond Clust
 		return respond, err
 	}
 
-	switch v := respond.parsedRespond.(type) {
+	switch v := respond.ParsedRespond.(type) {
 
 	case ClusterInfo:
 		respond.Info = v

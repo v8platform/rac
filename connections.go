@@ -90,7 +90,7 @@ func (i ConnectionsList) Parse(res *RawRespond) error {
 		list = i.filter(list)
 	}
 
-	res.parsedRespond = list
+	res.ParsedRespond = list
 
 	return err
 
@@ -152,7 +152,7 @@ func (i ConnectionsInfo) Parse(res *RawRespond) error {
 
 	err := Unmarshal(res.Raw, &info)
 	res.Error = err
-	res.parsedRespond = info
+	res.ParsedRespond = info
 	return err
 }
 
@@ -213,7 +213,7 @@ func (m *Manager) Connections(what interface{}, opts ...interface{}) (respond Co
 		return respond, err
 	}
 
-	switch v := respond.parsedRespond.(type) {
+	switch v := respond.ParsedRespond.(type) {
 
 	case ConnectionInfo:
 		respond.Info = v

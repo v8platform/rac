@@ -81,7 +81,7 @@ func (i SessionsList) Parse(res *RawRespond) error {
 	}
 
 	res.Error = err
-	res.parsedRespond = list
+	res.ParsedRespond = list
 	return err
 
 }
@@ -153,7 +153,7 @@ func (i SessionsInfo) Parse(res *RawRespond) error {
 
 	err = Unmarshal(res.Raw, &info)
 	res.Error = err
-	res.parsedRespond = info
+	res.ParsedRespond = info
 	return err
 
 }
@@ -184,7 +184,7 @@ func (i SessionsTerminate) Parse(res *RawRespond) error {
 
 	err = Unmarshal(res.Raw, &info)
 	res.Error = err
-	res.parsedRespond = info
+	res.ParsedRespond = info
 	return err
 
 }
@@ -215,7 +215,7 @@ func (m *Manager) Sessions(what interface{}, opts ...interface{}) (respond Sessi
 		return respond, err
 	}
 
-	switch v := respond.parsedRespond.(type) {
+	switch v := respond.ParsedRespond.(type) {
 
 	case SessionsInfo:
 		respond.Info = v
@@ -241,7 +241,7 @@ func (m *Manager) Licenses(what interface{}, opts ...interface{}) (respond Licen
 		return respond, err
 	}
 
-	switch v := respond.parsedRespond.(type) {
+	switch v := respond.ParsedRespond.(type) {
 	case LicenseInfo:
 		respond.Info = v
 		respond.List = append(respond.List, v)

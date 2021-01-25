@@ -119,12 +119,12 @@ func infobaseAuthParams(auth InfobaseAuth) map[string]string {
 type RawRespond struct {
 	Status        bool
 	Raw           []byte
-	parsedRespond interface{}
+	ParsedRespond interface{}
 	Error         error
 }
 
 func (r *RawRespond) Parsed() interface{} {
-	return r.parsedRespond
+	return r.ParsedRespond
 }
 
 func newRawRespond(data []byte, err error) *RawRespond {
