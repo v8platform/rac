@@ -83,7 +83,7 @@ func (i ConnectionsList) Parse(res *RawRespond) error {
 		return res.Error
 	}
 
-	err := Unmarshal(res.raw, &list)
+	err := Unmarshal(res.Raw, &list)
 	res.Error = err
 
 	if i.FilterFunc != nil {
@@ -150,7 +150,7 @@ func (i ConnectionsInfo) Parse(res *RawRespond) error {
 		return res.Error
 	}
 
-	err := Unmarshal(res.raw, &info)
+	err := Unmarshal(res.Raw, &info)
 	res.Error = err
 	res.parsedRespond = info
 	return err

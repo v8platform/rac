@@ -74,7 +74,7 @@ func (i SessionsList) Parse(res *RawRespond) error {
 		return res.Error
 	}
 
-	err = Unmarshal(res.raw, &list)
+	err = Unmarshal(res.Raw, &list)
 
 	if l, ok := list.([]SessionsInfo); ok {
 		list = i.filter(l)
@@ -151,7 +151,7 @@ func (i SessionsInfo) Parse(res *RawRespond) error {
 		return res.Error
 	}
 
-	err = Unmarshal(res.raw, &info)
+	err = Unmarshal(res.Raw, &info)
 	res.Error = err
 	res.parsedRespond = info
 	return err
@@ -182,7 +182,7 @@ func (i SessionsTerminate) Parse(res *RawRespond) error {
 		return res.Error
 	}
 
-	err = Unmarshal(res.raw, &info)
+	err = Unmarshal(res.Raw, &info)
 	res.Error = err
 	res.parsedRespond = info
 	return err
