@@ -182,6 +182,7 @@ func initDefaultRunner(options *ManagerOptions) Runner {
 	return &runner{
 		Timeout:         options.Timeout,
 		TryTimeoutCount: options.TryTimeoutCount,
+		log:             options.Logger,
 	}
 
 }

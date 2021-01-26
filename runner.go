@@ -12,6 +12,7 @@ import (
 type runner struct {
 	Timeout         time.Duration
 	TryTimeoutCount int
+	log             Logger
 }
 
 func (r *runner) RunCtx(ctx context.Context, command string, args []string) (respond []byte, err error) {
